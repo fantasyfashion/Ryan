@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服装店首页</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 首页大图展示 -->
+    <header>
+        <div class="hero-image">
+            <h1>欢迎来到我们的服装店</h1>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="#">新品</a></li>
+            <li><a href="#">系列</a></li>
+            <li><a href="#">关于我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 产品展示 -->
+    <section class="product-gallery">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x500" alt="产品1" class="product-image" onclick="openModal(this)">
+            <div class="product-info">
+                <h2>产品1</h2>
+                <p>价格：$100</p>
+                <p>描述：这是一款简约的服装，适合日常穿着。</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x500" alt="产品2" class="product-image" onclick="openModal(this)">
+            <div class="product-info">
+                <h2>产品2</h2>
+                <p>价格：$120</p>
+                <p>描述：这款服装适合各种场合，时尚又舒适。</p>
+            </div>
+        </div>
+
+        <!-- 更多产品可以继续添加 -->
+    </section>
+
+    <!-- 图片放大模态框 -->
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <script>
+        function openModal(image) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            modal.style.display = "block";
+            modalImage.src = image.src;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
